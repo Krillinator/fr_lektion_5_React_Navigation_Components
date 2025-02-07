@@ -3,6 +3,7 @@ import logoDark from "./logo-dark.svg"
 import logoLight from "./logo-light.svg"
 import { useState } from "react"
 import type { User } from "~/types/User"
+import { CustomButton } from "~/components/CustomButton"
 
 export function Welcome() {
   const [user, setUser] = useState<User>({ username: "Benny", password: "123" })
@@ -28,6 +29,7 @@ export function Welcome() {
 
   // ... <-- Spread Operator, copies values of all variables in object
   // () = {}
+  // param = scope
   // (prev) => ({...prev, value: ""})
 
   return (
@@ -46,6 +48,10 @@ export function Welcome() {
               className="hidden w-full dark:block"
             />
           </div>
+
+          <CustomButton />
+          <CustomButton />
+          <CustomButton />
           <Link to={"/about"}>Navigate to About page</Link>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
